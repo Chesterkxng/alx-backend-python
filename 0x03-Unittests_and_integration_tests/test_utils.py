@@ -17,7 +17,6 @@ class TestAccessNestedMap(unittest.TestCase):
         ({"a": {"b": 2}}, ("a",), {"b": 2}),
         ({"a": {"b": 2}}, ("a", "b"), 2),
     ])
-
     def test_access_nested_map(self, nestedMap, path, expected):
         """
         accessing nested map test case
@@ -34,6 +33,7 @@ class TestAccessNestedMap(unittest.TestCase):
         """
         self.assertRaises(expected, access_nested_map, nestedMap, path)
 
+
 class TestGetJson(unittest.TestCase):
     """
     Get json test class
@@ -43,7 +43,6 @@ class TestGetJson(unittest.TestCase):
         ("http://holberton.io", {"payload": False}),
     ])
     @patch("requests.get")
-
     def test_get_json(self, input, expected, mock_get_json):
         """
         function for testing get_json function
@@ -66,6 +65,7 @@ class TestMemoize(unittest.TestCase):
             """
             look-up for def
             """
+
             def a_method(self):
                 """
                 returns 42
@@ -90,6 +90,7 @@ class TestMemoize(unittest.TestCase):
             memo.assert_called_once()
             self.assertEqual(result1, 42)
             self.assertEqual(result2, 42)
+
 
 if __name__ == "__main__":
     unittest.main()
